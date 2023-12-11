@@ -30,7 +30,7 @@ try:
         conn.save(data)
 
     elif sys.argv[1] == 'prod':
-        engine = create_engine('sqlite:///db_test')
+        engine = create_engine('sqlite:///db_prod')
         session = scoped_session(sessionmaker(engine))
         model.Base.metadata.bind = engine
         model.Base.metadata.create_all(engine)
